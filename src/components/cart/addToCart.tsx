@@ -1,21 +1,25 @@
 'use client'
 
-import { FC, useState } from 'react'
+import { FC, use, useState } from 'react'
 import Image from 'next/image'
+import { useDispatch, useSelector } from 'react-redux'
+import { addItem, removeItem } from '@/lib/redux/reducers/cartSlice'
 
 interface AddToCartProps {
 
 }
 
 const AddToCart: FC<AddToCartProps> = ({ }) => {
-  const [quantity, setQuantity] = useState(0)
+  const { count } = useSelector((state: any) => state.cart)
+  const dispatch = useDispatch()
+
 
   const addToCart = () => {
-    setQuantity(prev => Math.min(prev + 1, 999))
+    dispatch(addItem())
   }
 
   const removeFromCart = () => {
-    setQuantity(prev => (Math.max(prev - 1, 0)))
+    dispatch(removeItem())
   }
 
   return (
@@ -30,7 +34,7 @@ const AddToCart: FC<AddToCartProps> = ({ }) => {
 
         <div>
           <p className="text-xl font-bold">
-            {quantity}
+            {count}
           </p>
         </div>
 
