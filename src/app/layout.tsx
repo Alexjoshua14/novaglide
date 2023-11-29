@@ -1,6 +1,10 @@
 import type { Metadata } from 'next'
+
 import { Kumbh_Sans } from 'next/font/google'
+
 import './globals.css'
+
+import Providers from '@/components/providers/provider'
 import NavBar from '@/components/navigation/navBar'
 
 const kumbhSans = Kumbh_Sans({ subsets: ['latin'] })
@@ -18,8 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={kumbhSans.className}>
-        <NavBar />
-        {children}
+        <Providers>
+          <NavBar />
+          {children}
+        </Providers>
       </body>
     </html>
   )
