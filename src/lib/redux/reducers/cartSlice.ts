@@ -1,6 +1,10 @@
 
 import { createSlice } from '@reduxjs/toolkit'
 
+/**
+ * Simple redux slice for communication of demo cart
+ * state between components. 
+ */
 export const cartSlice = createSlice({
   name: 'cart',
   initialState: {
