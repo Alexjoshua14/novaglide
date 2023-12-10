@@ -23,6 +23,12 @@ const CartIcon = (
   </svg>
 )
 
+/**
+ * Add to Cart buttons, split into two rows or columns depending on screen size.
+ * First section allows increment/decrement of item coung while also 
+ * displaying total quantity in cart. 
+ * Second section just increments item count by one on click. 
+ */
 const AddToCart: FC<AddToCartProps> = ({ }) => {
   const { count } = useSelector((state: any) => state.cart)
   const dispatch = useDispatch()
