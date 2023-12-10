@@ -15,6 +15,11 @@ const cartItem = {
   image: "/images/image-product-1-thumbnail.jpg",
 }
 
+/**
+ * Demo cart item, would be further modularized in actual production
+ * implementation. Which that would just require passing an item uri
+ * and fetching specific data or even just passing all specific data directly as props
+ */
 const SneakerCartItem = ({ quantity }: { quantity: number }) => (
   <div className="min-w-[290px] w-full h-14 flex gap-3">
     <div className="relative h-full aspect-square rounded overflow-clip">
@@ -38,6 +43,11 @@ const SneakerCartItem = ({ quantity }: { quantity: number }) => (
   </div>
 )
 
+/**
+ * Main cart, which displays items in cart along with their
+ * essential information and quantity. Also allows removing items from cart. 
+ *
+ */
 const Cart: FC<CartProps> = ({ className, ...props }) => {
   // Get count from redux store
   // In production state should be typed
