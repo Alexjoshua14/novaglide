@@ -23,7 +23,9 @@ const ProductContainer: FC<ProductContainerProps> = ({ images }) => {
   }
 
   return (
-    <div className="w-full sm:w-[400px] sm:h-[450px] aspect-[5/4] flex flex-col items-center gap-6 border-2 border-teal-800">
+    <div
+      className="w-full sm:w-[400px] sm:h-[450px] aspect-[5/4] 
+                flex flex-col items-center gap-6 border-2 border-teal-800">
       <div className="relative w-full aspect-[5/4] grid place-items-center sm:rounded-xl sm:overflow-clip">
         <Image
           src={images[currentImage].src}
@@ -55,9 +57,23 @@ const ProductContainer: FC<ProductContainerProps> = ({ images }) => {
           </button>
         </div>
       </div>
-      <div className="hidden sm:flex w-full h-full border-2 border-teal-700">
-        <div>
-          Image Carousel Here
+      <div className="hidden sm:flex w-full h-full border-2 border-teal-700 overflow-x-auto no-scrollbar">
+        <div className="flex w-full gap-6">
+          {images.map((image, index) => (
+            <button
+              key={index}
+              className="relative h-full aspect-square grid place-items-center rounded-lg overflow-clip"
+              onClick={() => setCurrentImage(index)}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover"
+              />
+            </button>
+
+          ))}
         </div>
       </div>
     </div>
