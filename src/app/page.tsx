@@ -33,11 +33,11 @@ const productInfo = {
 export default function Home() {
   return (
     <main className="flex min-h-screen page-gutter-y flex-col items-center justify-between">
-      <div className="flex-1 z-10 w-full max-w-5xl flex flex-col items-center justify-between text-sm lg:flex">
+      <div className="flex-1 z-10 w-full max-w-5xl flex flex-col lg:flex-row items-center justify-between text-sm lg:page-gutter ">
 
         <ProductContainer images={productImages} />
 
-        <div className="flex-1 w-full page-gutter py-6 flex flex-col">
+        <div className="flex-1 w-full page-gutter py-6 flex items-center justify-center">
           <ProductInfo {...productInfo} />
         </div>
       </div>
