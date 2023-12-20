@@ -13,7 +13,7 @@ interface ProductInfoProps {
 
 const ProductInfo: FC<ProductInfoProps> = ({ name, brand, description, price, discount }) => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-4 max-w-[400px]">
       <ProductDescription name={name} description={description} brand={brand} />
       <ProductPrice price={price} discount={discount} />
       <AddToCart />

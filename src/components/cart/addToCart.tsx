@@ -43,8 +43,8 @@ const AddToCart: FC<AddToCartProps> = ({ }) => {
   }
 
   return (
-    <div className="h-28 w-full flex flex-col gap-4">
-      <div className="relative h-1/2 w-full flex items-center justify-center bg-greyblue-300 rounded-xl">
+    <div className="h-28 w-full max-w-[700px] flex flex-col md:flex-row gap-4">
+      <div className="relative h-1/2 w-full md:w-2/5 flex items-center justify-center bg-greyblue-300 rounded-xl">
         <button
           onClick={removeFromCart}
           className="absolute left-4 text-orange text-3xl font-bold"
@@ -66,7 +66,7 @@ const AddToCart: FC<AddToCartProps> = ({ }) => {
         </button>
 
       </div>
-      <div className="h-1/2 w-full flex">
+      <div className="h-1/2 w-full md:w-3/5 flex">
         <Button text={`Add to cart`} Icon={CartIcon} onClick={addToCart} />
       </div>
       {/* <button

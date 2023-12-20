@@ -30,7 +30,7 @@ const ProductPrice: FC<ProductPriceProps> = ({ price, discount }) => {
   const discountedPrice = (price - (price * discount)).toFixed(2)
 
   return (
-    <div className="w-full flex items-center justify-between">
+    <div className="w-full flex items-center justify-between md:flex-col md:items-start md:gap-2">
       <div className="flex items-center gap-4">
         <p className="text-3xl font-semibold">
           {`\$${discountedPrice}`}
