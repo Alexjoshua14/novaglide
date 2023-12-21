@@ -77,11 +77,11 @@
 
 @layer utilities {
   .page-gutter-x {
-    @apply px-6;
+    @apply px-6 lg:px-14;
   }
 
   .page-gutter-y {
-    @apply py-20 sm:pt-28;
+    @apply py-20 sm:pt-32;
   }
 
   .page-gutter {

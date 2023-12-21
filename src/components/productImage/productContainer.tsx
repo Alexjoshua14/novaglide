@@ -24,8 +24,8 @@ const ProductContainer: FC<ProductContainerProps> = ({ images }) => {
 
   return (
     <div
-      className="w-full sm:w-[400px] flex flex-col items-center gap-6">
-      <div className="relative w-full aspect-[5/4] grid place-items-center sm:rounded-xl sm:overflow-clip">
+      className="w-full sm:w-[360px] flex flex-col items-center gap-8">
+      <div className="relative w-full aspect-[5/4] sm:aspect-square grid place-items-center sm:rounded-xl sm:overflow-clip">
         <Image
           src={images[currentImage].src}
           alt={images[currentImage].alt}
@@ -56,7 +56,7 @@ const ProductContainer: FC<ProductContainerProps> = ({ images }) => {
           </button>
         </div>
       </div>
-      <div className="hidden sm:flex sm:min-h-[100px] w-full h-full overflow-x-auto no-scrollbar">
+      <div className="hidden sm:flex sm:min-h-[72px] w-full h-full overflow-x-auto no-scrollbar">
         <div className="flex w-full gap-6">
           {images.map((image, index) => (
             <button
@@ -64,7 +64,7 @@ const ProductContainer: FC<ProductContainerProps> = ({ images }) => {
               className={`relative h-full aspect-square grid place-items-center rounded-lg overflow-clip border-2 ${index === currentImage ? 'border-orange' : 'border-transparent'}`}
               onClick={() => setCurrentImage(index)}
             >
-              <div className={`z-30 absolute w-full h-full bg-white transition-opacity ${index === currentImage ? 'bg-opacity-70' : 'bg-opacity-0'}`} />
+              <div className={`z-30 absolute w-full h-full bg-white transition-opacity ${index === currentImage ? 'bg-opacity-70' : 'bg-opacity-0 hover:bg-opacity-40'}`} />
               <Image
                 src={image.src}
                 alt={image.alt}
