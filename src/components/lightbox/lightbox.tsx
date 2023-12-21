@@ -58,8 +58,13 @@ const Lightbox: FC<lightboxProps> = ({ images, children }) => {
               <Image src="/images/icon-next.svg" alt="prev" width={14} height={14} className="translate-x-[2px]" />
             </ArrowButton>
           </div>
-          <div className="h-[86px]">
-            <ImageReel images={images} currentImage={currentImage} onTileClick={(index) => setCurrentImage(index)} />
+          <div className="h-[75px]">
+            <ImageReel
+              images={images}
+              currentImage={currentImage}
+              onTileClick={(index) => setCurrentImage(index)}
+              centered
+            />
           </div>
         </div>
       </DialogContent>

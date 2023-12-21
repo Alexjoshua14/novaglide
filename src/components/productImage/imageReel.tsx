@@ -9,12 +9,13 @@ interface ImageReelProps extends HTMLAttributes<HTMLDivElement> {
   }[]
   onTileClick: (index: number) => void
   currentImage: number
+  centered?: boolean
 }
 
-const ImageReel: FC<ImageReelProps> = ({ images, onTileClick, currentImage, className }) => {
+const ImageReel: FC<ImageReelProps> = ({ images, onTileClick, currentImage, className, centered }) => {
   return (
     <div className={cn("hidden sm:flex sm:min-h-[72px] w-full h-full overflow-x-auto no-scrollbar", className)}>
-      <div className="flex w-full gap-6">
+      <div className={`flex w-full gap-6 ${centered && "items-center justify-center"}`}>
         {images.map((image, index) => (
           <button
             key={index}
