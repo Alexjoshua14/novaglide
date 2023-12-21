@@ -7,30 +7,13 @@ import Link from 'next/link'
 import NavLink from './navLink'
 
 interface MobileMenuProps {
-
+  navOptions: {
+    text: string
+    href: string
+  }[]
 }
 
-const navOptions = [
-  {
-    text: 'Collections',
-    href: '/'
-  }, {
-    text: 'Men',
-    href: '/'
-  }, {
-    text: 'Women',
-    href: '/'
-  }, {
-    text: 'About',
-    href: '/'
-  }, {
-    text: 'Contact',
-    href: '/'
-  },
-
-]
-
-const MobileMenu: FC<MobileMenuProps> = ({ }) => {
+const MobileMenu: FC<MobileMenuProps> = ({ navOptions }) => {
   const [open, setOpen] = useState(false)
 
   return (
